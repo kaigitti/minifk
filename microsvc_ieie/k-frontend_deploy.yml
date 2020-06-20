@@ -1,0 +1,63 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2020-06-20T14:17:38Z"
+  generation: 1
+  labels:
+    app: k-frontend
+  name: k-frontend
+  namespace: default
+  resourceVersion: "86648"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/k-frontend
+  uid: 803c08a8-e3f9-44d7-bacc-8f8d13423e4c
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: k-frontend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k-frontend
+    spec:
+      containers:
+      - image: kaigitti/vuejs-client:1
+        imagePullPolicy: IfNotPresent
+        name: vuejs-client
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2020-06-20T14:17:39Z"
+    lastUpdateTime: "2020-06-20T14:17:39Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2020-06-20T14:17:38Z"
+    lastUpdateTime: "2020-06-20T14:17:39Z"
+    message: ReplicaSet "k-frontend-9cc578fbf" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
