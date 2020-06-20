@@ -1,3 +1,0 @@
-yarn serve
-
-pause
