@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-06-21T08:06:49Z"
+  labels:
+    app: suber
+  name: suber
+  namespace: b6027315
+  resourceVersion: "4880"
+  selfLink: /api/v1/namespaces/default/services/suber
+  uid: b6ad8086-5364-4164-9c57-6876c4adeb99
+spec:
+  clusterIP: 10.98.208.123
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31591
+    port: 9093
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app: suber
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 172.17.0.204
