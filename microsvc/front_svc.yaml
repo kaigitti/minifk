@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2020-06-21T07:42:29Z"
+  creationTimestamp: "2020-06-21T07:58:38Z"
   labels:
     app: front
   name: front
   namespace: b6027315
-  resourceVersion: "2063"
+  resourceVersion: "3915"
   selfLink: /api/v1/namespaces/default/services/front
-  uid: 0313c244-d43f-479f-9782-0c481919f996
+  uid: a42157a0-8ca2-4bbb-a384-8264a7dba0ec
 spec:
-  clusterIP: 10.108.239.86
+  clusterIP: 10.100.151.62
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 31539
+  - nodePort: 32087
     port: 9090
     protocol: TCP
     targetPort: 9090
